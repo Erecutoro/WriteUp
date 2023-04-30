@@ -8,10 +8,10 @@ Author: JoshDaBosh
 
 ## Solution (unfinished)
 
-By checking the app.py file we can see that the app is vulnerable to SSTI with however a 25 character length
+if you checkout the source file we can see that the code escape the "message" argument meaning that by adding "/?message=" to the end or the page's URL you can input a "message".
 
 ```python
-
+from flask import Flask, make_response, request, escape, render_template_string
 ~~~
     if "message" in request.args:
         print(len(request.args["message"]))
@@ -23,7 +23,21 @@ By checking the app.py file we can see that the app is vulnerable to SSTI with h
 ~~~
 ```
 
-We can for example execute the folowing command (config.items()) https://brokenlogin.web.actf.co/?message={{config.items()}} to get flask's env variables thus confirming the SSTI path.
+If you go and checkout the Flask escape() function
+```
+This function replaces certain characters with their HTML entity equivalents
+```
+
+Meaning that by adding "{{ }}" you can use the Flask environment to input python code. This is a SSTI (Server-side Template Injection).
+
+There is however a 25 character length restriction.
+
+```python
+~~~
+        if len(request.args["message"]) >= 25:
+            return render_template_string(indexPage, fails=fails)
+~~~
+```
 
 To bypass the message caracter length we can use the request.args.s to use another argument without the message length restriction.
 
@@ -37,3 +51,4 @@ This however pass the s argument as a string and is thus not executed.
 # What was missing to get the flag (from other people writeup)
 
 Adding ```|safe``` to the SSTI and a XSS to redirect the admin bot's response and get the flag.
+Dont know where/what the ```|safe``` come from and where it was found.

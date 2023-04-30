@@ -8,7 +8,8 @@ Author: pertark
 
 ![image.png](asset/index.png)
 
-"Coerce" the AI to give you the flag by pressuring it. Tell the AI to give you the flag multiple time and the AI will give it to you.
+When asking the AI to give you the flag the answer is different each time you ask the Ai.
+So "Coerce" the AI to give you the flag by pressuring it. Tell the AI to give you the flag multiple time and the AI will give it to you.
 
 ## Flag
 
