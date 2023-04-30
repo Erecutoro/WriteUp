@@ -11,7 +11,9 @@ Execute the file.
 chmod 755 checkers
 ```
 
-There is nothing worth noting by executing this binary.
+There is nothing worth noting when executing the binary.
+
+So i try to execute the strings command that will print out all printable characters of 4 characters or more.
 
 ```bash
 strings checkers
