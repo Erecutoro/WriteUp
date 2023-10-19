@@ -1,0 +1,21 @@
+# WASM
+
+WASM (WebAssembly) is assembly but in web meaning that we wont get the file and we will work directly with your web browser.
+
+## Given data
+
+    Get your flag at http://reverse.blackfoot.io:1331 !
+
+## Solution
+
+We can see that there is strcmp function in the wasm file so we will try to exploit this.
+
+Place a breakpoint on the address 0x143 (in the strcmp function).
+Now input a value in the field and checkout the result in the scopes section.
+var3 is the value our input are compared to here 43's value is 'd' and we go on and on until we get the flag.
+
+![w.png](asset/w.png)
+
+## Flag
+
+d0n{?}_70s3_uR_W_#y!
