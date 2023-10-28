@@ -19,3 +19,13 @@ Reverse engeneering
 ## Wasm
 - [ez_breezy](wasm/1/)
 - [kill_la_kool](wasm/2/)
+
+## Rust
+- [rust](rust/1/)
+
+## Network
+- [http](network/1/)
+- [https](network/2/)
+
+## AntiDBG
+- [antiDBG](antiDBG/1)
